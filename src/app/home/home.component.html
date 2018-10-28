@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="center-align">
+      <h1>Flickr</h1>
+    </div>
+    <div class="col s12 m12">
+      <form [formGroup]="searchedForm" (ngSubmit)="searchTags()" novalidate>
+        <div class="row">
+          <div class="input-field col s12 m10">
+            <input id="searchedField" formControlName="searchedField" name="searchedField" type="text">
+            <label for="searchedField">Search tags separate by comma</label>
+          </div>
+          <div class="col s12 m2 valign-wrapper">
+            <button class="waves-effect waves-light btn grey darken-4" type="submit" style="margin-top: 1.5rem;">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12 m4" *ngFor="let entry of entries">
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator responsive-img" src="{{entry.img}}">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{entry.title}}</span>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
